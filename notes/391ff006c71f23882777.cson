@@ -1,0 +1,28 @@
+createdAt: "2017-12-25T01:42:20.094Z"
+updatedAt: "2017-12-25T05:10:15.822Z"
+type: "SNIPPET_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "读xferlog日志 统计vsftp上传文件总大小"
+description: "读xferlog日志 统计vsftp上传文件总大小"
+snippets: [
+  {
+    name: ""
+    mode: "Shell"
+    content: '''
+      cat /var/log/xferlog*  | grep "Dec 24" | awk 'BEGIN{sum=0} {sum+=$8} END{print "size is: ",sum/1024/1024/1024,"GB"}'
+      
+      #分组统计
+      awk 'BEGIN{FS=" "}{if($12=="i"){s[$5" "$2" "$3" ,"$14] += $8;} }END{ for(i in s){  print i," ,ftp uploaded files total size ,",s[i]/1024/1024/1024,",GB" } }'  /var/log/xferlog*
+      
+      #分组统计转年月日yyyyMMdd
+      awk 'BEGIN{FS=" "}{if($12=="i"){s[$2" "$3" "$5" ,"$14] += $8;} }END{ for(i in s){ idx=substr(i,0,index(i,",")-1);cmd="date -d \\""idx"\\" +%Y%m%d";cmd|getline ds;close(cmd); print ds,substr(i,index(i,","))," ,ftp uploaded files total size ,",s[i]/1024/1024/1024,",GB" } }'  /var/log/xferlog*
+      
+      #按年月日用户分组统计
+      awk 'BEGIN{FS=" "}{if($12=="i"){cmd="date -d \\""$1" "$2" "$3" "$4" "$5"\\" +%s";cmd|getline ds;s[strftime("%Y%m%d",ds)" ,"$14] += $8;close(cmd)}} END{  for(i in s){  print i," ,ftp uploaded files total size ,",s[i]/1024/1024/1024,",GB" }  }' /var/log/xferlog
+      
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

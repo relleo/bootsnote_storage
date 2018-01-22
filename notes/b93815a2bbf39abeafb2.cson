@@ -1,0 +1,16 @@
+createdAt: "2018-01-04T07:11:49.663Z"
+updatedAt: "2018-01-04T07:12:29.341Z"
+type: "SNIPPET_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "awk 找出某个地市的数据"
+description: "awk 找出某个地市的数据"
+snippets: [
+  {
+    name: "awk"
+    mode: "Shell"
+    content: "awk  'BEGIN{FS=\"|\"}{if($3 != 037 ){print  $3}}' `ls STBPROGRAMINFO* | grep -v -E \".gz$\"` "
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

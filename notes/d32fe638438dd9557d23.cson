@@ -1,0 +1,196 @@
+createdAt: "2017-12-27T10:31:00.806Z"
+updatedAt: "2017-12-27T10:31:28.938Z"
+type: "MARKDOWN_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "情况介绍："
+content: '''
+  情况介绍：
+  　　一、由于硬盘或者分区的操作方式其实都一样，所以我这里就以分区为例。
+  　　二、/home 分区 2.6G，由如下 pv 组成：
+  　　/dev/sda5 100M
+  　　/dev/sda6 200M
+  　　/dev/sda7 300M
+  　　/dev/sda8 400M
+  　　/dev/sda9 500M
+  　　/dev/sda10 600M
+  　　/dev/sda11 500M
+  　　很碎对吧?^_^ 因为测试。
+  　　三、随机写了一堆文件进去，用量达到了 2G，空闲 500M
+  　　四、准备将 sda6 这个 200M 的 PV 卸掉 (卸掉的容量必须小于空闲容量)
+  　　好了开始具体操作了。
+  　　卸载分区 (缩小操作必须卸载才能进行)：
+  　　umount /home
+  　　缩小分区：
+  　　e2fsck -f /dev/liuhg_disk/home
+  　　resize2fs /dev/liuhg_disk/home 2200M
+  　　首先将分区缩小到 2200M 这是为了给 sda6 腾出空间，sda6 为 200M，而我腾出了 400M，因此应该是足够的。
+  　　缩小逻辑卷：
+  　　lvreduce -L 2200M /dev/liuhg_disk/home
+  　　分区缩小了用到的逻辑卷也要随着缩小，并查看 PV 使用的状态：
+  　　pvdisplay -m
+  　　显示如下：
+  　　--- Physical volume ---
+  　　PV Name /dev/sda5
+  　　VG Name liuhg_disk
+  　　PV Size 103.26 MiB / not usable 3.26 MiB
+  　　Allocatable yes (but full)
+  　　PE Size 4.00 MiB
+  　　Total PE 25
+  　　Free PE 0
+  　　Allocated PE 25
+  　　PV UUID 5lnx52-b4jc-OOfZ-f2QA-ttdQ-DZeD-Ce3rb3
+  　　--- Physical Segments ---
+  　　Physical extent 0 to 24:
+  　　Logical volume /dev/liuhg_disk/home
+  　　Logical extents 0 to 24
+  　　--- Physical volume ---
+  　　PV Name /dev/sda6
+  　　VG Name liuhg_disk
+  　　PV Size 203.92 MiB / not usable 3.92 MiB
+  　　Allocatable yes (but full)
+  　　PE Size 4.00 MiB
+  　　Total PE 50
+  　　Free PE 0 <----- 太悲剧了，sda6 里写满了数据一点不剩
+  　　Allocated PE 50 <----- 这 50PE 的数据要挪走才行，否则数据就丢了，并且存放的地方也必须是连续的至少 50PE
+  　　PV UUID S2ane6-nlFG-uSNR-35NP-Yxa6-cXRb-r8E8mK
+  　　--- Physical Segments ---
+  　　Physical extent 0 to 49:
+  　　Logical volume /dev/liuhg_disk/home
+  　　Logical extents 25 to 74
+  　　--- Physical volume ---
+  　　PV Name /dev/sda7
+  　　VG Name liuhg_disk
+  　　PV Size 305.89 MiB / not usable 1.89 MiB
+  　　Allocatable yes
+  　　PE Size 4.00 MiB
+  　　Total PE 76
+  　　Free PE 76 <--- 这个分区有 76 个空余，因此预计装那 50 个是不会有问题的
+  　　Allocated PE 0
+  　　PV UUID 9CFnlx-CAEw-CSul-Rig9-FiCN-zK0a-oGmTEP
+  　　--- Physical Segments ---
+  　　Physical extent 0 to 75:
+  　　FREE
+  　　--- Physical volume ---
+  　　PV Name /dev/sda8
+  　　VG Name liuhg_disk
+  　　PV Size 407.87 MiB / not usable 3.87 MiB
+  　　Allocatable yes
+  　　PE Size 4.00 MiB
+  　　Total PE 101
+  　　Free PE 60
+  　　Allocated PE 41
+  　　PV UUID X0I8p0-x2xr-2xLG-QQD4-jbtS-3C4i-xPn4Bl
+  　　--- Physical Segments ---
+  　　Physical extent 0 to 40:
+  　　Logical volume /dev/liuhg_disk/home
+  　　Logical extents 471 to 511
+  　　Physical extent 41 to 100:
+  　　FREE
+  　　--- Physical volume ---
+  　　PV Name /dev/sda9
+  　　VG Name liuhg_disk
+  　　PV Size 509.84 MiB / not usable 1.84 MiB
+  　　Allocatable yes (but full)
+  　　PE Size 4.00 MiB
+  　　Total PE 127
+  　　Free PE 0
+  　　Allocated PE 127
+  　　PV UUID avJQaA-oMKt-NEoJ-ojBK-2Csc-1dca-1mh6Ue
+  　　--- Physical Segments ---
+  　　Physical extent 0 to 126:
+  　　Logical volume /dev/liuhg_disk/home
+  　　Logical extents 225 to 351
+  　　--- Physical volume ---
+  　　PV Name /dev/sda10
+  　　VG Name liuhg_disk
+  　　PV Size 603.98 MiB / not usable 3.98 MiB
+  　　Allocatable yes (but full)
+  　　PE Size 4.00 MiB
+  　　Total PE 150
+  　　Free PE 0
+  　　Allocated PE 150
+  　　PV UUID JlMIAF-A49n-M6HA-ZLXf-d8nS-pfZr-YeQsKT
+  　　--- Physical Segments ---
+  　　Physical extent 0 to 149:
+  　　Logical volume /dev/liuhg_disk/home
+  　　Logical extents 75 to 224
+  　　--- Physical volume ---
+  　　PV Name /dev/sda11
+  　　VG Name liuhg_disk
+  　　PV Size 478.47 MiB / not usable 2.47 MiB
+  　　Allocatable yes (but full)
+  　　PE Size 4.00 MiB
+  　　Total PE 119
+  　　Free PE 0
+  　　Allocated PE 119
+  　　PV UUID xnHJNA-tDVx-dryX-KM1x-g96Y-sptI-9iUOcU
+  　　--- Physical Segments ---
+  　　Physical extent 0 to 118:
+  　　Logical volume /dev/liuhg_disk/home
+  　　Logical extents 352 to 470
+  　　将 sda6 设置为离线状态：
+  　　pvchange -xn /dev/sda6
+  　　使用 pvdisplay -m
+  　　显示如下：
+  　　……
+  　　--- Physical volume ---
+  　　PV Name /dev/sda6
+  　　VG Name liuhg_disk
+  　　PV Size 203.92 MiB / not usable 3.92 MiB
+  　　Allocatable NO <----- 表示已经关闭了该 PV
+  　　PE Size 4.00 MiB
+  　　Total PE 50
+  　　Free PE 0
+  　　Allocated PE 50
+  　　PV UUID S2ane6-nlFG-uSNR-35NP-Yxa6-cXRb-r8E8mK
+  　　……
+  　　将 sda6 的数据移走：
+  　　pvmove -i 1 /dev/sda6
+  　　-i 1 是每 1 秒钟报告一次数据迁移的进度。
+  　　[root@liuhg /]# pvmove -i 1 /dev/sda6
+  　　/dev/sda6: Moved: 38.0%
+  　　/dev/sda6: Moved: 84.0%
+  　　/dev/sda6: Moved: 100.0%
+  　　重新用 pvdisplay -m
+  　　显示如下：
+  　　……
+  　　--- Physical volume ---
+  　　PV Name /dev/sda6
+  　　VG Name liuhg_disk
+  　　PV Size 203.92 MiB / not usable 3.92 MiB
+  　　Allocatable NO
+  　　PE Size 4.00 MiB
+  　　Total PE 50
+  　　Free PE 50 <---- 显示完全空闲和 Total PE 数一致
+  　　Allocated PE 0
+  　　PV UUID S2ane6-nlFG-uSNR-35NP-Yxa6-cXRb-r8E8mK
+  　　……
+  　　从卷组里把 sda6 删除:
+  　　[root@liuhg /]# vgreduce liuhg_disk /dev/sda6
+  　　Removed "/dev/sda6" from volume group "liuhg_disk"
+  　　pvdisplay -m 再看看吧：
+  　　--- NEW Physical volume --- <----- 还告诉你这是一个新的 PV ^_^
+  　　PV Name /dev/sda6
+  　　VG Name <----- 空了
+  　　PV Size 203.92 MiB
+  　　Allocatable NO
+  　　PE Size 0
+  　　Total PE 0
+  　　Free PE 0
+  　　Allocated PE 0
+  　　PV UUID S2ane6-nlFG-uSNR-35NP-Yxa6-cXRb-r8E8mK
+  　　到此 vgdisplay -v 能看到已经没有了 / dev/sda6 了。重新挂载 / home
+  　　[root@liuhg /]# mount /dev/liuhg_disk/home /home
+  　　[root@liuhg /]# df -h
+  　　Filesystem Size Used Avail Use% Mounted on
+  　　/dev/sda1 2.0G 546M 1.3G 30% /
+  　　tmpfs 504M 0 504M 0% /dev/shm
+  　　/dev/mapper/liuhg_disk-home
+  　　2.2G 1.8G 42M 98% /home
+  　　进去看看数据，一个都没丢。
+'''
+tags: [
+  "如何安全的删除_Linux_LVM_中的_PV_物理卷"
+]
+isStarred: false
+isTrashed: false
