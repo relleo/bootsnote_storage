@@ -1,0 +1,337 @@
+createdAt: "2018-02-11T11:21:53.976Z"
+updatedAt: "2018-03-23T09:55:21.214Z"
+type: "SNIPPET_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "NFS共享挂载 hadoop0 hadoop1 hadoop2"
+description: "NFS共享挂载 hadoop0 hadoop1 hadoop2 "
+snippets: [
+  {
+    name: ""
+    mode: "Shell"
+    content: '''
+      10.17.10.129:/home/ftpdata_anhui             /home/ftpdata_anhui           nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/ftpdata_chongqing         /home/ftpdata_chongqing       nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/ftpdata_guangdong         /home/ftpdata_guangdong       nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/ftpdata_hainan            /home/ftpdata_hainan          nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/ftpdata_heilongjiang      /home/ftpdata_heilongjiang    nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/ftpdata_hunan             /home/ftpdata_hunan           nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/ftpdata_shanxi            /home/ftpdata_shanxi          nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/ftpdata_sichuan           /home/ftpdata_sichuan         nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/ftpdata_tianjin           /home/ftpdata_tianjin         nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/ftpdata_xinjiang          /home/ftpdata_xinjiang        nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/ftpdata_xizang            /home/ftpdata_xizang          nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.129:/home/cmcc                      /home/cmcc/hadoop0_home       nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      
+      10.17.10.130:/home/ftpdata_gansu             /home/ftpdata_gansu           nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.130:/home/ftpdata_guangxi           /home/ftpdata_guangxi         nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.130:/home/ftpdata_hebei             /home/ftpdata_hebei           nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.130:/home/ftpdata_hubei             /home/ftpdata_hubei           nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.130:/home/ftpdata_jiangxi           /home/ftpdata_jiangxi         nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.130:/home/ftpdata_jilin             /home/ftpdata_jilin           nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.130:/home/ftpdata_liaoning          /home/ftpdata_liaoning        nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.130:/home/ftpdata_qinghai           /home/ftpdata_qinghai         nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.130:/home/ftpdata_shandong          /home/ftpdata_shandong        nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.130:/home/ftpdata_zhejiang          /home/ftpdata_zhejiang        nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      
+      10.17.10.131:/home/ftpdata_beijing           /home/ftpdata_beijing         nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.131:/home/ftpdata_fujian            /home/ftpdata_fujian          nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.131:/home/ftpdata_guizhou           /home/ftpdata_guizhou         nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.131:/home/ftpdata_henan             /home/ftpdata_henan           nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.131:/home/ftpdata_jiangsu           /home/ftpdata_jiangsu         nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.131:/home/ftpdata_neimenggu         /home/ftpdata_neimenggu       nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.131:/home/ftpdata_ningxia           /home/ftpdata_ningxia         nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.131:/home/ftpdata_shaanxi           /home/ftpdata_shaanxi         nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.131:/home/ftpdata_shanghai          /home/ftpdata_shanghai        nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      10.17.10.131:/home/ftpdata_yunnan            /home/ftpdata_yunnan          nfs bg,hard,intr,noatime,async,noexec,nosuid,nodev 0 0
+      
+      
+      
+      su gansu
+      mkdir -p /home/ftpdata_gansu/20180209/HGUINFO
+      mkdir -p /home/ftpdata_gansu/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_gansu/20180209/STATISTICS
+      mkdir -p /home/ftpdata_gansu/20180209/STBALARM
+      mkdir -p /home/ftpdata_gansu/20180209/STBINFO
+      mkdir -p /home/ftpdata_gansu/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_gansu/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_gansu/20180209/STBSTATISTICS
+      exit
+      su guangxi
+      mkdir -p /home/ftpdata_guangxi/20180209/HGUALARM
+      mkdir -p /home/ftpdata_guangxi/20180209/HGUDIAGNOSE
+      mkdir -p /home/ftpdata_guangxi/20180209/HGUINFO
+      mkdir -p /home/ftpdata_guangxi/20180209/HGUPERIODIC
+      exit
+      su hebei
+      mkdir -p /home/ftpdata_hebei/20180209/HGUINFO
+      mkdir -p /home/ftpdata_hebei/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_hebei/20180209/STATISTICS
+      mkdir -p /home/ftpdata_hebei/20180209/STBALARM
+      mkdir -p /home/ftpdata_hebei/20180209/STBINFO
+      mkdir -p /home/ftpdata_hebei/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_hebei/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_hebei/20180209/STBSTATISTICS
+      exit
+      su hubei
+      mkdir -p /home/ftpdata_hubei/20180209/HGUINFO
+      mkdir -p /home/ftpdata_hubei/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_hubei/20180209/STBALARM
+      mkdir -p /home/ftpdata_hubei/20180209/STBINFO
+      mkdir -p /home/ftpdata_hubei/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_hubei/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_hubei/20180209/STBSTATISTICS
+      exit
+      su jiangxi
+      mkdir -p /home/ftpdata_jiangxi/20180209/HGUINFO
+      mkdir -p /home/ftpdata_jiangxi/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_jiangxi/20180209/STATISTICS
+      mkdir -p /home/ftpdata_jiangxi/20180209/STBALARM
+      mkdir -p /home/ftpdata_jiangxi/20180209/STBINFO
+      mkdir -p /home/ftpdata_jiangxi/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_jiangxi/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_jiangxi/20180209/STBSTATISTICS
+      exit
+      su jilin
+      mkdir -p /home/ftpdata_jilin/20180209/HGUINFO
+      mkdir -p /home/ftpdata_jilin/20180209/STBALARM
+      mkdir -p /home/ftpdata_jilin/20180209/STBINFO
+      mkdir -p /home/ftpdata_jilin/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_jilin/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_jilin/20180209/STBSTATISTICS
+      exit
+      su liaoning
+      mkdir -p /home/ftpdata_liaoning/20180209/HGUINFO
+      mkdir -p /home/ftpdata_liaoning/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_liaoning/20180209/STBALARM
+      mkdir -p /home/ftpdata_liaoning/20180209/STBINFO
+      mkdir -p /home/ftpdata_liaoning/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_liaoning/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_liaoning/20180209/STBSTATISTICS
+      exit
+      su qinghai
+      mkdir -p /home/ftpdata_qinghai/20180209/HGUINFO
+      mkdir -p /home/ftpdata_qinghai/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_qinghai/20180209/STATISTICS
+      mkdir -p /home/ftpdata_qinghai/20180209/STBALARM
+      mkdir -p /home/ftpdata_qinghai/20180209/STBINFO
+      mkdir -p /home/ftpdata_qinghai/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_qinghai/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_qinghai/20180209/STBSTATISTICS
+      exit
+      su shandong
+      mkdir -p /home/ftpdata_shandong/20180209/HGUALARM
+      mkdir -p /home/ftpdata_shandong/20180209/HGUINFO
+      mkdir -p /home/ftpdata_shandong/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_shandong/20180209/STBALARM
+      mkdir -p /home/ftpdata_shandong/20180209/STBINFO
+      mkdir -p /home/ftpdata_shandong/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_shandong/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_shandong/20180209/STBSTATISTICS
+      exit
+      su zhejiang
+      mkdir -p /home/ftpdata_zhejiang/20180209/HGUINFO
+      mkdir -p /home/ftpdata_zhejiang/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_zhejiang/20180209/STATISTICS
+      mkdir -p /home/ftpdata_zhejiang/20180209/STBALARM
+      mkdir -p /home/ftpdata_zhejiang/20180209/STBINFO
+      mkdir -p /home/ftpdata_zhejiang/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_zhejiang/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_zhejiang/20180209/STBSTATISTICS
+      exit
+      
+      
+      
+      
+      su beijing
+      mkdir -p /home/ftpdata_beijing/20180209/HGUINFO
+      mkdir -p /home/ftpdata_beijing/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_beijing/20180209/STBALARM
+      mkdir -p /home/ftpdata_beijing/20180209/STBINFO
+      mkdir -p /home/ftpdata_beijing/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_beijing/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_beijing/20180209/STBSTATISTICS
+      exit
+      su fujian
+      mkdir -p /home/ftpdata_fujian/20180209/HGUINFO
+      mkdir -p /home/ftpdata_fujian/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_fujian/20180209/STATISTICS
+      mkdir -p /home/ftpdata_fujian/20180209/STBALARM
+      mkdir -p /home/ftpdata_fujian/20180209/STBINFO
+      mkdir -p /home/ftpdata_fujian/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_fujian/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_fujian/20180209/STBSTATISTICS
+      exit
+      su guizhou
+      mkdir -p /home/ftpdata_guizhou/20180209/HGUINFO
+      mkdir -p /home/ftpdata_guizhou/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_guizhou/20180209/STATISTICS
+      mkdir -p /home/ftpdata_guizhou/20180209/STBALARM
+      mkdir -p /home/ftpdata_guizhou/20180209/STBINFO
+      mkdir -p /home/ftpdata_guizhou/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_guizhou/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_guizhou/20180209/STBSTATISTICS
+      exit
+      su henan
+      mkdir -p /home/ftpdata_henan/20180209/HGUINFO
+      mkdir -p /home/ftpdata_henan/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_henan/20180209/STATISTICS
+      mkdir -p /home/ftpdata_henan/20180209/STBALARM
+      mkdir -p /home/ftpdata_henan/20180209/STBINFO
+      mkdir -p /home/ftpdata_henan/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_henan/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_henan/20180209/STBSTATISTICS
+      exit
+      su jiangsu
+      mkdir -p /home/ftpdata_jiangsu/20180209/HGUINFO
+      mkdir -p /home/ftpdata_jiangsu/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_jiangsu/20180209/STATISTICS
+      mkdir -p /home/ftpdata_jiangsu/20180209/STBALARM
+      mkdir -p /home/ftpdata_jiangsu/20180209/STBINFO
+      mkdir -p /home/ftpdata_jiangsu/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_jiangsu/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_jiangsu/20180209/STBSTATISTICS
+      exit
+      su neimenggu
+      mkdir -p /home/ftpdata_neimenggu/20180209/HGUINFO
+      mkdir -p /home/ftpdata_neimenggu/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_neimenggu/20180209/STATISTICS
+      mkdir -p /home/ftpdata_neimenggu/20180209/STBALARM
+      mkdir -p /home/ftpdata_neimenggu/20180209/STBINFO
+      mkdir -p /home/ftpdata_neimenggu/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_neimenggu/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_neimenggu/20180209/STBSTATISTICS
+      exit
+      su ningxia
+      mkdir -p /home/ftpdata_ningxia/20180209/HGUINFO
+      mkdir -p /home/ftpdata_ningxia/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_ningxia/20180209/STATISTICS
+      mkdir -p /home/ftpdata_ningxia/20180209/STBALARM
+      mkdir -p /home/ftpdata_ningxia/20180209/STBINFO
+      mkdir -p /home/ftpdata_ningxia/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_ningxia/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_ningxia/20180209/STBSTATISTICS
+      exit
+      su shaanxi
+      mkdir -p /home/ftpdata_shaanxi/20180209/HGUINFO
+      mkdir -p /home/ftpdata_shaanxi/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_shaanxi/20180209/STBALARM
+      mkdir -p /home/ftpdata_shaanxi/20180209/STBINFO
+      mkdir -p /home/ftpdata_shaanxi/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_shaanxi/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_shaanxi/20180209/STBSTATISTICS
+      exit
+      su shanghai
+      mkdir -p /home/ftpdata_shanghai/20180209/HGUINFO
+      mkdir -p /home/ftpdata_shanghai/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_shanghai/20180209/STBALARM
+      mkdir -p /home/ftpdata_shanghai/20180209/STBINFO
+      mkdir -p /home/ftpdata_shanghai/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_shanghai/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_shanghai/20180209/STBSTATISTICS
+      exit
+      su yunnan
+      mkdir -p /home/ftpdata_yunnan/20180209/HGUINFO
+      mkdir -p /home/ftpdata_yunnan/20180209/HGUPERIODIC
+      mkdir -p /home/ftpdata_yunnan/20180209/STATISTICS
+      mkdir -p /home/ftpdata_yunnan/20180209/STBALARM
+      mkdir -p /home/ftpdata_yunnan/20180209/STBINFO
+      mkdir -p /home/ftpdata_yunnan/20180209/STBPERIODIC
+      mkdir -p /home/ftpdata_yunnan/20180209/STBPROGRAMINFO
+      mkdir -p /home/ftpdata_yunnan/20180209/STBSTATISTICS
+      exit
+      
+      
+      mv ftpdata_gansu    bak_ftpdata_gansu    && mkdir ftpdata_gansu    && chown gansu:gansu    ftpdata_gansu    && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.130:/home/ftpdata_gansu    /home/ftpdata_gansu              
+      mv ftpdata_guangxi  bak_ftpdata_guangxi  && mkdir ftpdata_guangxi  && chown guangxi:guangxi  ftpdata_guangxi  && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.130:/home/ftpdata_guangxi  /home/ftpdata_guangxi          
+      mv ftpdata_hebei    bak_ftpdata_hebei    && mkdir ftpdata_hebei    && chown hebei:hebei    ftpdata_hebei    && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.130:/home/ftpdata_hebei    /home/ftpdata_hebei              
+      mv ftpdata_hubei    bak_ftpdata_hubei    && mkdir ftpdata_hubei    && chown hubei:hubei    ftpdata_hubei    && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.130:/home/ftpdata_hubei    /home/ftpdata_hubei              
+      mv ftpdata_jiangxi  bak_ftpdata_jiangxi  && mkdir ftpdata_jiangxi  && chown jiangxi:jiangxi  ftpdata_jiangxi  && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.130:/home/ftpdata_jiangxi  /home/ftpdata_jiangxi          
+      mv ftpdata_jilin    bak_ftpdata_jilin    && mkdir ftpdata_jilin    && chown jilin:jilin    ftpdata_jilin    && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.130:/home/ftpdata_jilin    /home/ftpdata_jilin              
+      mv ftpdata_liaoning bak_ftpdata_liaoning && mkdir ftpdata_liaoning && chown liaoning:liaoning ftpdata_liaoning && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.130:/home/ftpdata_liaoning /home/ftpdata_liaoning        
+      mv ftpdata_qinghai  bak_ftpdata_qinghai  && mkdir ftpdata_qinghai  && chown qinghai:qinghai  ftpdata_qinghai  && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.130:/home/ftpdata_qinghai  /home/ftpdata_qinghai          
+      mv ftpdata_shandong bak_ftpdata_shandong && mkdir ftpdata_shandong && chown shandong:shandong ftpdata_shandong && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.130:/home/ftpdata_shandong /home/ftpdata_shandong        
+      mv ftpdata_zhejiang bak_ftpdata_zhejiang && mkdir ftpdata_zhejiang && chown zhejiang:zhejiang ftpdata_zhejiang && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.130:/home/ftpdata_zhejiang /home/ftpdata_zhejiang                                                                                                                                                                                                                                                              
+      mv ftpdata_beijing   bak_ftpdata_beijing   && mkdir ftpdata_beijing   && chown beijing:beijing   ftpdata_beijing   && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.131:/home/ftpdata_beijing   /home/ftpdata_beijing                                                                                                                                                                                                                                       
+      mv ftpdata_fujian    bak_ftpdata_fujian    && mkdir ftpdata_fujian    && chown fujian:fujian    ftpdata_fujian    && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.131:/home/ftpdata_fujian    /home/ftpdata_fujian      
+      mv ftpdata_guizhou   bak_ftpdata_guizhou   && mkdir ftpdata_guizhou   && chown guizhou:guizhou   ftpdata_guizhou   && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.131:/home/ftpdata_guizhou   /home/ftpdata_guizhou    
+      mv ftpdata_henan     bak_ftpdata_henan     && mkdir ftpdata_henan     && chown henan:henan     ftpdata_henan     && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.131:/home/ftpdata_henan     /home/ftpdata_henan        
+      mv ftpdata_jiangsu   bak_ftpdata_jiangsu   && mkdir ftpdata_jiangsu   && chown jiangsu:jiangsu   ftpdata_jiangsu   && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.131:/home/ftpdata_jiangsu   /home/ftpdata_jiangsu    
+      mv ftpdata_neimenggu bak_ftpdata_neimenggu && mkdir ftpdata_neimenggu && chown neimenggu:neimenggu ftpdata_neimenggu && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.131:/home/ftpdata_neimenggu /home/ftpdata_neimenggu
+      mv ftpdata_ningxia   bak_ftpdata_ningxia   && mkdir ftpdata_ningxia   && chown ningxia:ningxia   ftpdata_ningxia   && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.131:/home/ftpdata_ningxia   /home/ftpdata_ningxia    
+      mv ftpdata_shaanxi   bak_ftpdata_shaanxi   && mkdir ftpdata_shaanxi   && chown shaanxi:shaanxi   ftpdata_shaanxi   && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.131:/home/ftpdata_shaanxi   /home/ftpdata_shaanxi    
+      mv ftpdata_shanghai  bak_ftpdata_shanghai  && mkdir ftpdata_shanghai  && chown shanghai:shanghai  ftpdata_shanghai  && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.131:/home/ftpdata_shanghai  /home/ftpdata_shanghai  
+      mv ftpdata_yunnan    bak_ftpdata_yunnan    && mkdir ftpdata_yunnan    && chown yunnan:yunnan    ftpdata_yunnan    && mount -t nfs -o rw,bg,hard,intr,noatime,async,noexec,nosuid,nodev 10.17.10.131:/home/ftpdata_yunnan    /home/ftpdata_yunnan      
+      
+      
+      umount ftpdata_gansu     
+      umount ftpdata_guangxi   
+      umount ftpdata_hebei     
+      umount ftpdata_hubei     
+      umount ftpdata_jiangxi   
+      umount ftpdata_jilin     
+      umount ftpdata_liaoning  
+      umount ftpdata_qinghai   
+      umount ftpdata_shandong  
+      umount ftpdata_zhejiang
+      umount ftpdata_beijing  
+      umount ftpdata_fujian    
+      umount ftpdata_guizhou   
+      umount ftpdata_henan     
+      umount ftpdata_jiangsu   
+      umount ftpdata_neimenggu 
+      umount ftpdata_ningxia   
+      umount ftpdata_shaanxi   
+      umount ftpdata_shanghai  
+      umount ftpdata_yunnan    
+      
+      
+      mv ftpdata_gansu          new_ftpdata_gansu             && mv bak_ftpdata_gansu          ftpdata_gansu             
+      mv ftpdata_guangxi        new_ftpdata_guangxi           && mv bak_ftpdata_guangxi        ftpdata_guangxi           
+      mv ftpdata_hebei          new_ftpdata_hebei             && mv bak_ftpdata_hebei          ftpdata_hebei             
+      mv ftpdata_hubei          new_ftpdata_hubei             && mv bak_ftpdata_hubei          ftpdata_hubei             
+      mv ftpdata_jiangxi        new_ftpdata_jiangxi           && mv bak_ftpdata_jiangxi        ftpdata_jiangxi           
+      mv ftpdata_jilin          new_ftpdata_jilin             && mv bak_ftpdata_jilin          ftpdata_jilin             
+      mv ftpdata_liaoning       new_ftpdata_liaoning          && mv bak_ftpdata_liaoning       ftpdata_liaoning          
+      mv ftpdata_qinghai        new_ftpdata_qinghai           && mv bak_ftpdata_qinghai        ftpdata_qinghai           
+      mv ftpdata_shandong       new_ftpdata_shandong          && mv bak_ftpdata_shandong       ftpdata_shandong          
+      mv ftpdata_zhejiang       new_ftpdata_zhejiang          && mv bak_ftpdata_zhejiang       ftpdata_zhejiang   
+      mv ftpdata_beijing         new_ftpdata_beijing          && mv bak_ftpdata_beijing         ftpdata_beijing                   
+      mv ftpdata_fujian         new_ftpdata_fujian            && mv bak_ftpdata_fujian         ftpdata_fujian            
+      mv ftpdata_guizhou        new_ftpdata_guizhou           && mv bak_ftpdata_guizhou        ftpdata_guizhou           
+      mv ftpdata_henan          new_ftpdata_henan             && mv bak_ftpdata_henan          ftpdata_henan             
+      mv ftpdata_jiangsu        new_ftpdata_jiangsu           && mv bak_ftpdata_jiangsu        ftpdata_jiangsu           
+      mv ftpdata_neimenggu      new_ftpdata_neimenggu         && mv bak_ftpdata_neimenggu      ftpdata_neimenggu         
+      mv ftpdata_ningxia        new_ftpdata_ningxia           && mv bak_ftpdata_ningxia        ftpdata_ningxia           
+      mv ftpdata_shaanxi        new_ftpdata_shaanxi           && mv bak_ftpdata_shaanxi        ftpdata_shaanxi           
+      mv ftpdata_shanghai       new_ftpdata_shanghai          && mv bak_ftpdata_shanghai       ftpdata_shanghai          
+      mv ftpdata_yunnan         new_ftpdata_yunnan            && mv bak_ftpdata_yunnan         ftpdata_yunnan            
+      
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_gansu/*     /home/ftpdata_gansu/    
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_guangxi/*   /home/ftpdata_guangxi/  
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_hebei/2018*     /home/ftpdata_hebei/    
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_hubei/2018*     /home/ftpdata_hubei/    
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_jiangxi/2018*   /home/ftpdata_jiangxi/  
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_jilin/2018*     /home/ftpdata_jilin/    
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_liaoning/2018*  /home/ftpdata_liaoning/ 
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_qinghai/2018*   /home/ftpdata_qinghai/  
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_shandong/2018*  /home/ftpdata_shandong/ 
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_zhejiang2018*  /home/ftpdata_zhejiang/   
+      
+      
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_beijing/20180208   /home/ftpdata_beijing/  
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_fujian/20180208    /home/ftpdata_fujian/   
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_guizhou/20180208   /home/ftpdata_guizhou/  
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_henan/20180208     /home/ftpdata_henan/    
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_jiangsu/20180208   /home/ftpdata_jiangsu/  
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_neimenggu/20180208 /home/ftpdata_neimenggu/
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_ningxia/20180208   /home/ftpdata_ningxia/  
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_shaanxi/20180208   /home/ftpdata_shaanxi/  
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_shanghai/20180208  /home/ftpdata_shanghai/ 
+      rsync -vzrt --progress --include="*/" --include="*.gz" --exclude="*" -e ssh cmcc@10.17.10.129:/home/bak_ftpdata_yunnan/20180208    /home/ftpdata_yunnan/   
+      
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

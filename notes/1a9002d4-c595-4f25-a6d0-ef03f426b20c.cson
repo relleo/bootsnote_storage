@@ -1,0 +1,29 @@
+createdAt: "2018-03-22T09:39:58.774Z"
+updatedAt: "2018-03-23T09:55:43.738Z"
+type: "MARKDOWN_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "1.代码提交："
+content: '''
+   1.代码提交：
+   每次提交时，log格式 ： 【修改/新增】【双送平台/流式平台】【机顶盒/网关】**********
+    
+    
+   2.代码格式及注释格式：
+  下载CodeTemplates.xml、CodeFormatter.xml
+   使用方法：Eclipse --> Preference --> Java --> Code Templates --> Import "CodeTemplates.xml"
+   Eclipse --> Preference --> Java --> Formatter --> Import "CodeFormatter.xml"
+   每次提交svn前，执行Ctrl + Shift + F 进行代码格式化
+    
+   3.Maven私服：
+     http://218.206.176.201:9090/nexus 
+    
+    
+    4. Maven配置
+     settings.xml
+    
+    
+    5. JDK统一使用1.7版本
+'''
+tags: []
+isStarred: false
+isTrashed: false

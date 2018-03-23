@@ -1,0 +1,19 @@
+createdAt: "2018-03-01T05:04:07.463Z"
+updatedAt: "2018-03-23T09:55:13.879Z"
+type: "SNIPPET_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "实验室部署familyPortal"
+description: "实验室部署familyPortal"
+snippets: [
+  {
+    name: "mcmd@192.168.3.127"
+    mode: "Shell"
+    content: '''
+      [mcmd@dp3 ~]$ cd tm3
+      [mcmd@dp3 tm3]$ ./tm3 deploy release
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,5 +1,5 @@
 createdAt: "2018-01-09T03:16:20.724Z"
-updatedAt: "2018-01-17T15:55:46.353Z"
+updatedAt: "2018-03-23T09:55:02.113Z"
 type: "SNIPPET_NOTE"
 folder: "0a2024078fbd03e61b83"
 title: "RawDataAnalyzer日志压缩删除"
@@ -9,9 +9,15 @@ snippets: [
     name: ""
     mode: "Shell"
     content: '''
-      datestr=20180111
       
-      zip stb_$datestr.zip _home_ftpdata_*$datestr*_STB* && rm _home_ftpdata_*$datestr*_STB* && zip hgu_$datestr.zip _home_ftpdata_*$datestr*_HGU* && rm _home_ftpdata_*$datestr*_HGU* 
+      
+      datestr=20180306 && zip stb_$datestr.zip _home_ftpdata_*$datestr*_STB* && rm _home_ftpdata_*$datestr*_STB* && zip hgu_$datestr.zip _home_ftpdata_*$datestr*_HGU* && rm _home_ftpdata_*$datestr*_HGU* 
+      
+      datestr=20180306 && zip stb_$datestr.zip *_home_ftpdata_*$datestr*_STB* && rm *_home_ftpdata_*$datestr*_STB* && zip hgu_$datestr.zip *_home_ftpdata_*$datestr*_HGU* && rm *_home_ftpdata_*$datestr*_HGU* 
+      
+      start=20180228;end=20180331;sdate=`date -d "+0 day $start" +%Y%m%d`;enddate=`date -d "+1 day $end" +%Y%m%d`;while [[ $sdate < $enddate ]]; do datestr=$sdate; zip stb_$datestr.zip *_home_ftpdata_*$datestr*_STB* && rm *_home_ftpdata_*$datestr*_STB* && zip hgu_$datestr.zip *_home_ftpdata_*$datestr*_HGU* && rm *_home_ftpdata_*$datestr*_HGU*; sdate=`date -d "+1 day $sdate" +%Y%m%d`;done
+      
+      start=20180201;end=20180331;sdate=`date -d "+0 day $start" +%Y%m%d`;enddate=`date -d "+1 day $end" +%Y%m%d`;while [[ $sdate < $enddate ]]; do datestr=$sdate; zip csv_$datestr.zip *$datestr*.csv && rm *$datestr*.csv; sdate=`date -d "+1 day $sdate" +%Y%m%d`;done
     '''
   }
 ]

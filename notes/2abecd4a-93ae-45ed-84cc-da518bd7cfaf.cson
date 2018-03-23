@@ -1,0 +1,20 @@
+createdAt: "2018-03-02T02:03:56.661Z"
+updatedAt: "2018-03-23T09:55:05.922Z"
+type: "MARKDOWN_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "1.登陆vmhadoop19"
+content: '''
+  1.登陆vmhadoop19
+  2.cd family_rawdata_logs/RawDataAnalyzerV2/
+  3.zip SpringFestivalSecure20180301.zip *20180301.csv
+  4.ftp登陆vmhadoop19
+  5.进入目录 family_rawdata_logs/RawDataAnalyzerV2/
+  6.下载 jk_probe_d.csv SpringFestivalSecure20180301.zip
+  7.解压出 jk_probe_d_20180301.csv
+  8.截图jk_probe_d.csv jk_probe_d_20180301.csv 发小组群
+  9.压缩报表包
+  10.发送邮件
+'''
+tags: []
+isStarred: false
+isTrashed: false

@@ -1,5 +1,5 @@
 createdAt: "2018-01-04T07:11:49.663Z"
-updatedAt: "2018-02-11T10:30:31.450Z"
+updatedAt: "2018-03-23T09:54:58.219Z"
 type: "SNIPPET_NOTE"
 folder: "0a2024078fbd03e61b83"
 title: "awk 找出某个地市的数据"
@@ -14,6 +14,9 @@ snippets: [
       gunzip -c STBPROGRAMINFO*.gz | awk  'BEGIN{FS="|"}{if($8 >6000000 && $(NF-4)=="63"){print  $0}}' > /home/cmcc/cuijian_test/rawdata
       
       gunzip -c STBALARM*.gz | awk  'BEGIN{FS="|"}{if($(NF-2)=="32"){print  $0}}' > /home/cmcc/cuijian_test/rawdata
+      
+      
+      gunzip -c STBPROGRAMINFO*.gz | awk  'BEGIN{FS="|"}{print  $10}' | more
     '''
   }
 ]
