@@ -1,0 +1,16 @@
+createdAt: "2018-04-17T10:35:07.122Z"
+updatedAt: "2018-04-25T03:11:43.035Z"
+type: "SNIPPET_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "vmhadoop19导入stb_config"
+description: "vmhadoop19导入stb_config"
+snippets: [
+  {
+    name: ""
+    mode: "Shell"
+    content: "java -classpath .:nationalDataConverter-0.0.1-SNAPSHOT-worker.jar com.cmcc.family.nationalDataConverter.entrance.StbConfigExcelImportTask"
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

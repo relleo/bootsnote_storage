@@ -1,5 +1,5 @@
 createdAt: "2018-01-04T07:11:49.663Z"
-updatedAt: "2018-03-23T09:54:58.219Z"
+updatedAt: "2018-03-29T03:18:54.756Z"
 type: "SNIPPET_NOTE"
 folder: "0a2024078fbd03e61b83"
 title: "awk 找出某个地市的数据"
@@ -17,6 +17,10 @@ snippets: [
       
       
       gunzip -c STBPROGRAMINFO*.gz | awk  'BEGIN{FS="|"}{print  $10}' | more
+      
+      awk 'BEGIN{FS=" "}{if(($3 == 25 || $3 == 26 || $3 == 27) && $7=="[zhejiang]" ){print  $0}}' vsftp.log > zhejiang_vsftp.log
+      
+      awk 'BEGIN{FS=" "}{{print  $8}}' vsftp.log | more
     '''
   }
 ]

@@ -1,0 +1,45 @@
+createdAt: "2018-04-26T10:39:35.922Z"
+updatedAt: "2018-05-08T06:42:17.706Z"
+type: "SNIPPET_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "物理机挂载IP SAN存储"
+description: "物理机挂载IP SAN存储"
+snippets: [
+  {
+    name: ""
+    mode: "Shell"
+    content: '''
+      #安装 xfs文件系统依赖  安装多路径依赖
+       yum install xfsprogs xfsdump  device-mapper* -y
+      
+      #配置多路径依赖
+       chkconfig multipathd on
+       mpathconf --enable
+       service multipathd restart
+       multipath -ll
+       ls /dev/mapper/
+      
+      #对新增的存储设备进行分区
+       parted /dev/mapper/mpathm mklabel gpt
+       parted /dev/mapper/mpathm mkpart primary 1 100%
+      
+      #创建物理卷
+       pvcreate /dev/mapper/mpathmp1
+      #创建卷组
+       vgcreate vg_iscsi /dev/mapper/mpathmp1
+      #创建逻辑卷
+       lvcreate --name lv_iscsi -l 100%FREE vg_iscsi
+      #格式化xfs文件系统，支持16TB以上空间
+       mkfs.xfs /dev/vg_iscsi/lv_iscsi
+      #创建挂载点目录
+       mkdir /data1
+      #挂载逻辑卷
+       mount /dev/vg_iscsi/lv_iscsi /data1/
+      #开机自动挂载，编辑/etc/fstab，添加以下行 
+      /dev/mapper/vg_iscsi-lv_iscsi /data1                   xfs    defaults,_netdev        0 0
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

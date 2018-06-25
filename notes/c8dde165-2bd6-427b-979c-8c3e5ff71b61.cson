@@ -1,0 +1,28 @@
+createdAt: "2018-04-09T01:44:15.211Z"
+updatedAt: "2018-04-09T01:44:40.434Z"
+type: "SNIPPET_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "grep -f"
+description: "grep -f"
+snippets: [
+  {
+    name: ""
+    mode: "Shell"
+    content: '''
+      $ grep -f seed.txt foo.txt
+      bow
+      bowel
+      bow 123
+      
+      $ grep -wf seed.txt foo.txt
+      bow
+      bow 123
+      
+      $ grep -xf seed.txt foo.txt
+      bow
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

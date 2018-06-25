@@ -1,0 +1,24 @@
+createdAt: "2018-04-12T10:29:29.374Z"
+updatedAt: "2018-04-12T10:34:30.147Z"
+type: "SNIPPET_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "201打包"
+description: "201打包"
+snippets: [
+  {
+    name: ""
+    mode: "text"
+    content: '''
+      ( success ( 2 2 ( ) ( edit-pipeline svndiff1 absent-entries commit-revprops depth log-revprops atomic-revprops partial-replay inherited-props ephemeral-txnprops file-revs-reverse ) ) ) 请输入本次版本号:如V1.0[默认V1.0.0] V1.3.1        
+      现在使用的版本号为:V1.3.1
+      Choose project to complile [all/family/osgi]?family
+      
+      请输入版本,默认common:[common/iot]common
+      
+      Choose sub project to complile [all/portal/deploy/open/netty/web/analysis]|quit ?open
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false

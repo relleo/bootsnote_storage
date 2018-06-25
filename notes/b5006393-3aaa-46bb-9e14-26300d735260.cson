@@ -1,0 +1,44 @@
+createdAt: "2018-04-09T10:01:13.476Z"
+updatedAt: "2018-05-31T10:14:07.041Z"
+type: "SNIPPET_NOTE"
+folder: "0a2024078fbd03e61b83"
+title: "查看 Nginx 的并发连接数"
+description: "查看 Nginx 的并发连接数"
+snippets: [
+  {
+    name: ""
+    mode: "text"
+    content: '''
+      #netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
+      
+      TIME_WAIT 17
+      ESTABLISHED 3254
+      LAST_ACK 236
+      FIN_WAIT_1 648
+      FIN_WAIT_2 581
+      CLOSING 7
+      CLOSE_WAIT 4916
+      
+      
+      解析：
+      CLOSED  // 无连接是活动的或正在进行
+      LISTEN  // 服务器在等待进入呼叫
+      SYN_RECV  // 一个连接请求已经到达，等待确认
+      SYN_SENT  // 应用已经开始，打开一个连接
+      ESTABLISHED  // 正常数据传输状态 / 当前并发连接数
+      FIN_WAIT1  // 应用说它已经完成
+      FIN_WAIT2  // 另一边已同意释放
+      ITMED_WAIT  // 等待所有分组死掉
+      CLOSING  // 两边同时尝试关闭
+      TIME_WAIT  // 另一边已初始化一个释放
+      LAST_ACK  // 等待所有分组死掉
+      
+      sudo service nginx stop
+      
+      sudo service nginx start
+    '''
+  }
+]
+tags: []
+isStarred: false
+isTrashed: false
